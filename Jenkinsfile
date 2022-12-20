@@ -4,7 +4,7 @@ pipeline {
         stage('Hello') {
             steps {
                 sh '''
-                ls 
+                ls-h 
                 pwd
                 '''
             }
