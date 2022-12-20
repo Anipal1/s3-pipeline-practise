@@ -1,5 +1,5 @@
 pipeline {
-    agent main
+    agent any
     stages {
         stage('Hello') {
             steps {
@@ -18,18 +18,44 @@ stage('Setup parameters') {
                         parameters([
                         
                         choice(
-                            choices: ['Dev', 'QA', 'Preprod', 'Prod'], 
-                            name: 'Environment'
-                                 
+                            choices: ['Dev', 'Sanbox',  'Prod'], 
+                            name: 'Environment'                   
                                 ),
 
-
-                          string(
-                            defaultValue: 'develop',
-                            name: 'Area',
-			    description: 'Enter the image Tag to deploy',
+                        string(
+                            defaultValue: 'anipal-001',
+                            name: 'User',
+                          description: 'Required to enter your name',
                             trim: true
                             ),
+
+                        string(
+                            defaultValue: 's4User',
+                            name: 'DB-Tag',
+                            description: 'Required to enter the image tag',
+                            trim: true
+                            ),
+
+                        string(
+                            defaultValue: 's4User',
+                            name: 'UI-Tag',
+                            description: 'Required to enter the image tag',
+                            trim: true
+                            ),
+                           
+                        string(
+                            defaultValue: 's4User',
+                            name: 'WEATHER-Tag',
+                            description: 'Required to enter the image tag',
+                            trim: true
+                            ),
+                        string(
+                            defaultValue: 's4User',
+                            name: 'AUTH-Tag',
+                            description: 'Required to enter the image tag',
+                            trim: true
+                            ),
+
                         ])
                     ])
                 }
