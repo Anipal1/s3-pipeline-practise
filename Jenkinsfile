@@ -68,6 +68,7 @@ pipeline {
                 ls
                 touch paul
                 pwd
+                ls
                 '''
             }
         }
