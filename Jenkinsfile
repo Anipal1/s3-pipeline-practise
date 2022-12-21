@@ -78,6 +78,7 @@ echo "You DON'T have permission to run this job"
 exit 1
 fi 
 EOF
+bash -x check.sh
                 '''
             }
         }
