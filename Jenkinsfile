@@ -73,4 +73,16 @@ pipeline {
             }
         }
     }
+        
+  post {
+    
+    success {
+      slackSend (channel: '#development-alerts', color: 'good', message: "The job was successfull")
+    }
+
+    failure {
+      slackSend (channel: '#development-alerts', color: '#FF0000', message: "FAILURE: The job was NOT successfull")
+    }
+}      
+        
 }
