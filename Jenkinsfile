@@ -62,13 +62,152 @@ pipeline {
             }
         }
 
-        stage('clean1') {
+        stage('permission') {
             steps {
                 sh '''
                 ls
                 touch paul
                 pwd
+                '''
+            }
+        }
+
+ stage('cleaning') {
+            steps {
+                sh '''
                 ls
+                touch paul
+                pwd
+                '''
+            }
+        }
+
+ stage('sonarqube') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
+                '''
+            }
+        }
+
+stage('build-dev') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
+                '''
+            }
+        }               
+
+stage('build-sanbox') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
+                '''
+            }
+        }                 
+
+ stage('build-prod') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
+                '''
+            }
+        }              
+
+stage('login') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
+                '''
+            }
+        }  
+
+stage('push-to-dockerhub-dev') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
+                '''
+            }
+        }          
+
+stage('push-to-dockerhub-sanbox') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
+                '''
+            }
+        }  
+
+stage('push-to-dockerhub-prod') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
+                '''
+            }
+        }  
+
+stage('update helm charts-sanbox') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
+                '''
+            }
+        } 
+
+stage('update helm charts-dev') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
+                '''
+            }
+        }                  
+
+stage('update helm charts-prod') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
+                '''
+            }
+        }       
+
+stage('wait for argocd') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
+                '''
+            }
+        }       
+
+stage('post build report (success, unstable, failure) on slack  development-alerts channel  and clean directory') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
                 '''
             }
         }
