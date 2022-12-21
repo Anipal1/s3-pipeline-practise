@@ -65,6 +65,7 @@ pipeline {
     stage('permission') {
             steps {
                 sh '''
+               <EOF> 
 stage('permission') {
             steps {
                 sh '''
