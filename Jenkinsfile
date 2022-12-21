@@ -87,9 +87,6 @@ EOF
         }
 
 
-                '''
-            }
-        }
 
 
  stage('cleaning') {
