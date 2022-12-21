@@ -1,17 +1,17 @@
 pipeline {
-    agent any
+        agent {
+        label ("node1 || node2 || node3 || node4|| node5|| branch|| main || Jenkins-node || docker-agent || Jenkins-docker2 || preproduction || production")
+    }
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '20'))
+    disableConcurrentBuilds()
+    timeout (time: 60, unit: 'MINUTES')
+    timestamps()
+   }
     stages {
-        stage('Hello') {
-            steps {
-                sh '''
-                ls -h
-                pwd
-                '''
-            }
-        }
-   
-     }
-stage('Setup parameters') {
+
+        stage('Setup parameters') {
             steps {
                 script {
                     properties([
@@ -62,12 +62,14 @@ stage('Setup parameters') {
             }
         }
 
-
-
-
-
-
-
+        stage('clean1') {
+            steps {
+                sh '''
+                ls
+                touch paul
+                pwd
+                '''
+            }
+        }
+    }
 }
-
-
