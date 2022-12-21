@@ -65,16 +65,12 @@ pipeline {
     stage('permission') {
             steps {
                 sh '''
-               <EOF> 
-stage('permission') {
-            steps {
-                sh '''
-cat permission.txt| grep -o $USER
-        
-        
+                ls
+                touch paul
+                pwd
                 '''
             }
-        }
+        }               
 
 
 
