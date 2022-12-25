@@ -66,7 +66,6 @@ pipeline {
             steps {
                 sh '''
                 ls
-                touch paul
                 pwd
                 '''
             }
@@ -79,7 +78,6 @@ pipeline {
             steps {
                 sh '''
                 ls
-                touch paul
                 pwd
                 '''
             }
@@ -128,7 +126,6 @@ stage('build-sanbox') {
             steps {
                 sh '''
                 ls
-                touch paul
                 pwd
                 '''
             }
@@ -138,7 +135,6 @@ stage('build-sanbox') {
             steps {
                 sh '''
                 ls
-                touch paul
                 pwd
                 '''
             }
@@ -148,7 +144,6 @@ stage('login') {
             steps {
                 sh '''
                 ls
-                touch paul
                 pwd
                 '''
             }
@@ -158,7 +153,6 @@ stage('push-to-dockerhub-dev') {
             steps {
                 sh '''
                 ls
-                touch paul
                 pwd
                 '''
             }
@@ -168,7 +162,6 @@ stage('push-to-dockerhub-sanbox') {
             steps {
                 sh '''
                 ls -h
-                touch paul
                 pwd
                 '''
             }
@@ -178,7 +171,6 @@ stage('push-to-dockerhub-prod') {
             steps {
                 sh '''
                 ls
-                touch paul
                 pwd
                 '''
             }
@@ -188,7 +180,6 @@ stage('update helm charts-sanbox') {
             steps {
                 sh '''
                 ls
-                touch paul
                 pwd
                 '''
             }
@@ -198,7 +189,6 @@ stage('update helm charts-dev') {
             steps {
                 sh '''
                 ls
-                touch paul
                 pwd
                 '''
             }
@@ -228,7 +218,6 @@ stage('post build report (success, unstable, failure) on slack  development-aler
             steps {
                 sh '''
                 ls
-                touch paul
                 pwd
                 '''
             }
