@@ -167,7 +167,7 @@ stage('push-to-dockerhub-dev') {
 stage('push-to-dockerhub-sanbox') {
             steps {
                 sh '''
-                ls
+                ls -h
                 touch paul
                 pwd
                 '''
