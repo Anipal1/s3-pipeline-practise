@@ -134,7 +134,7 @@ stage('build-sanbox') {
  stage('build-prod') {
             steps {
                 sh '''
-                ls
+                ls -h
                 pwd
                 '''
             }
