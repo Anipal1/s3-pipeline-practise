@@ -27,7 +27,7 @@ options {
                                 ),
 
                           string(
-                            defaultValue: 's3paulinus',
+                            defaultValue: 's4user',
                             name: 'USER',
 			                description: 'Required to enter your name',
                             trim: true
