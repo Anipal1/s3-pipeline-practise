@@ -254,7 +254,7 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
         stage('update helm charts-dev') {
             steps {
                 sh '''
-                ls 
+                ls -h
                 pwd
                 '''
             }
