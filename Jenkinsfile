@@ -8,7 +8,7 @@ pipeline {
 	}
 
 options {
-    buildDiscarder(logRotator(numToKeepStr: '20'))
+    buildDiscarder(logRotator(numToKeepStr: '5'))
     disableConcurrentBuilds()
     timeout (time: 60, unit: 'MINUTES')
     timestamps()
@@ -282,7 +282,7 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
         stage('wait for argocd') {
             steps {
                 sh '''
-                ls 
+                ls -h 
                 pwd
                 '''
             }
