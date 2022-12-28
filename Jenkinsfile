@@ -254,7 +254,7 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
         stage('update helm charts-dev') {
             steps {
                 sh '''
-                ls -h
+                ls 
                 pwd
                 '''
             }
@@ -282,7 +282,7 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
         stage('wait for argocd') {
             steps {
                 sh '''
-                ls 
+                ls -h
                 pwd
                 '''
             }
@@ -316,54 +316,4 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
 
 
 	
-}
-
-
-
-
-
-
-
-
-
-pipeline {
-    agent any
-
-    stages {
-        stage('Hello') {
-            steps {
-                sh '''
-                ls -h 
-                pwd
-                '''
-            }
-        }
-
-    stage('backup') {
-
-	      steps {
-	        script {
-	          withCredentials([
-	            string(credentialsId: 'paulinus-image', variable: 'TOKEN')
-	          ]) {
-
-	            sh '''
-                git config --global user.name "Anipal1"
-                git config --global user.email anikepaulinus@gmail.com
-                rm -rf github-jenkins-practise02 || true
-                git clone https://Anipal1:[$TOKEN]@github.com/Anipal1/github-jenkins-practise02
-                git add -A
-                git commit -m "test"
-                cd github-jenkins-practise02
-	            '''
-	          }
-
-	        }
-
-	      }
-
-	    }
-
-
-    }
 }
