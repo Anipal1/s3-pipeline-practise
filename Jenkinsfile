@@ -8,7 +8,7 @@ pipeline {
 	}
 
 options {
-    buildDiscarder(logRotator(numToKeepStr: '5'))
+    buildDiscarder(logRotator(numToKeepStr: '20'))
     disableConcurrentBuilds()
     timeout (time: 60, unit: 'MINUTES')
     timestamps()
@@ -27,7 +27,7 @@ options {
                                 ),
 
                           string(
-                            defaultValue: 's3paulinus',
+                            defaultValue: 's4user',
                             name: 'USER',
 			                description: 'Required to enter your name',
                             trim: true
@@ -236,11 +236,11 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
 	            sh '''
                 git config --global user.name "Anipal1"
                 git config --global user.email anikepaulinus@gmail.com
-                rm -rf github-jenkins-practise02 || true
-                git clone https://Anipal1:[$TOKEN]@github.com/Anipal1/github-jenkins-practise02
+                rm -rf s4-pipeline-practise || true
+                git clone https://Anipal1:[$TOKEN]@github.com/Anipal1/s4-pipeline-practise
                 git add -A
                 git commit -m "test"
-                cd github-jenkins-practise02
+                cd s4-pipeline-practise
 	            '''
 	          }
 
@@ -254,7 +254,7 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
         stage('update helm charts-dev') {
             steps {
                 sh '''
-                ls -h
+                ls 
                 pwd
                 '''
             }
@@ -273,7 +273,7 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
         stage('update helm charts-prod') {
             steps {
                 sh '''
-                ls -h 
+                ls 
                 pwd
                 '''
             }
@@ -282,7 +282,7 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
         stage('wait for argocd') {
             steps {
                 sh '''
-                ls -h 
+                ls 
                 pwd
                 '''
             }
@@ -316,4 +316,54 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
 
 
 	
+}
+
+
+
+
+
+
+
+
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                sh '''
+                ls 
+                pwd
+                '''
+            }
+        }
+
+    stage('backup') {
+
+	      steps {
+	        script {
+	          withCredentials([
+	            string(credentialsId: 'paulinus-image', variable: 'TOKEN')
+	          ]) {
+
+	            sh '''
+                git config --global user.name "Anipal1"
+                git config --global user.email anikepaulinus@gmail.com
+                rm -rf github-jenkins-practise02 || true
+                git clone https://Anipal1:[$TOKEN]@github.com/Anipal1/github-jenkins-practise02
+                git add -A
+                git commit -m "test"
+                cd github-jenkins-practise02
+	            '''
+	          }
+
+	        }
+
+	      }
+
+	    }
+
+
+    }
 }
