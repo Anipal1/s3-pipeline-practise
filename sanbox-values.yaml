@@ -5,9 +5,9 @@ image:
   ui:
      repository: devopseasylearning2021/s4-ui
      tag: ""
-  auth:
+       auth:
      repository: devopseasylearning2021/s4-auth
-          tag: ""
-  weather:
+     tag: ""
+       weather:
      repository: devopseasylearning2021/s4-weather
      tag: ""
