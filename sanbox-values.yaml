@@ -1,14 +1,13 @@
 image:
   db:
      repository: devopseasylearning2021/s4-db
-     tag: ""
+     tag: "002"
   ui:
      repository: devopseasylearning2021/s4-ui
-     tag: ""
+     tag: "002"
   auth:
        repository: devopseasylearning2021/s4-auth
-     tag: ""
+     tag: "002"
   weather:
-       repository: devopseasylearning2021/s4-weather
-     tag: ""
-
+     repository: devopseasylearning2021/s4-weather
+     tag: "002"
