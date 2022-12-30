@@ -226,7 +226,10 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
         }
 
           stage('update helm chart-dev') {
-
+           when{ 
+              expression {
+                env.Environment == 'DEV' }
+                }
 	      steps {
 	        script {
 	          withCredentials([
@@ -267,7 +270,10 @@ cat <<EOF >dev-values.yaml
 	    }
 
          stage('update helm chart-sanbox') {
-
+            when{ 
+              expression {
+                env.Environment == 'sanbox' }
+                }
 	      steps {
 	        script {
 	          withCredentials([
@@ -308,7 +314,10 @@ cat <<EOF >sanbox-values.yaml
 	    }
 
            stage('update helm chart-prod') {
-
+           when{ 
+              expression {
+                env.Environment == 'prod' }
+                }
 	      steps {
 	        script {
 	          withCredentials([
