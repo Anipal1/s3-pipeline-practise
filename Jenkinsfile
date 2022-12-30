@@ -272,7 +272,7 @@ cat <<EOF >dev-values.yaml
          stage('update helm chart-sanbox') {
             when{ 
               expression {
-                env.Environment == 'sanbox' }
+                env.Environment == 'SANBOX' }
                 }
 	      steps {
 	        script {
@@ -316,7 +316,7 @@ cat <<EOF >sanbox-values.yaml
            stage('update helm chart-prod') {
            when{ 
               expression {
-                env.Environment == 'prod' }
+                env.Environment == 'PROD' }
                 }
 	      steps {
 	        script {
