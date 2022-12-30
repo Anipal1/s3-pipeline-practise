@@ -256,7 +256,7 @@ cat <<EOF >dev-values.yaml
          weather:
             repository: devopseasylearning2021/s4-weather
            tag: "$WEATHERTag"
-   EOF
+EOF
             git add -A 
             git commit -m "testing commit from jenkins"
             git push https://Anipal1:$TOKEN@github.com/Anipal1/s4-pipeline-practise.git
@@ -286,7 +286,7 @@ cat <<EOF >dev-values.yaml
               rm -rf s4-pipeline-practise || true
               git clone https://Anipal1:$TOKEN@github.com/Anipal1/s4-pipeline-practise.git
               cd s4-pipeline-practise/CHARTS
-    cat <<EOF >sanbox-values.yaml
+cat <<EOF >sanbox-values.yaml
            image:
             db:
             repository: devopseasylearning2021/s4-db
@@ -300,7 +300,7 @@ cat <<EOF >dev-values.yaml
          weather:
             repository: devopseasylearning2021/s4-weather
            tag: "$WEATHERTag"
-    EOF
+EOF
             git add -A 
             git commit -m "testing commit from jenkins"
             git push https://Anipal1:$TOKEN@github.com/Anipal1/s4-pipeline-practise.git
@@ -330,7 +330,7 @@ cat <<EOF >dev-values.yaml
               rm -rf s4-pipeline-practise || true
               git clone https://Anipal1:$TOKEN@github.com/Anipal1/s4-pipeline-practise.git
               cd s4-pipeline-practise/CHARTS
-    cat <<EOF >prod-values.yaml
+cat <<EOF >prod-values.yaml
            image:
             db:
             repository: devopseasylearning2021/s4-db
@@ -344,7 +344,7 @@ cat <<EOF >dev-values.yaml
          weather:
             repository: devopseasylearning2021/s4-weather
            tag: "$WEATHERTag"
-    EOF
+EOF
             git add -A 
             git commit -m "testing commit from jenkins"
             git push https://Anipal1:$TOKEN@github.com/Anipal1/s4-pipeline-practise.git
